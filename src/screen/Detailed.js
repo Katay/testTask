@@ -23,29 +23,36 @@ const DetailedScreen = (props) => {
     return (
         <View style={styles.container}>
             <SafeAreaView/>
-            <View style={styles.top}>
-                {/* <Image source={{uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}`}} style={styles.image}/> */}
-                <Image source={{uri: item.poster_path}} style={styles.image}/>
-                <View style={styles.right}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <Text>Date: </Text><Text style={styles.date}>{moment(item.release_date).format('MM/DD/YYYY')}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row' }}>
-                        <Text>Budget: </Text><Text style={styles.bold}>{item.budget} $</Text>
-                    </View>
-                </View>
+            <View style={styles.content}>
+                <Text style={styles.name}>{item.name}</Text>
+                <Image source={{uri: 'https://www.w3schools.com/html/pic_trulli.jpg'}} style={styles.image}/>
+                <Text style={styles.date}>No date</Text>
+                <Text style={styles.description}>{item.description}</Text>
             </View>
-
-            <Text style={styles.description}>{item.overview}</Text>
         </View>
     )
 }
   
   const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20,
-        marginTop: 20,
+        flex: 1,
+        width: '100%',
+        backgroundColor: 'lightskyblue',
+        padding: 10,
     },
+    content: {
+        backgroundColor: 'green',
+        borderRadius: 20,
+        padding: 15,
+    },
+    name: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginBottom: 10,
+    },
+
+
+    
     top: {
         flexDirection: 'row',
     },
